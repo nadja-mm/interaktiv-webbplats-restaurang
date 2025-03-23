@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css-folder/style.css">
+    <script type="javascript" src="/javascript-folder/script.js" defer></script>
+    <title>Stadens resturang</title>
+</head>
+<body>
+    <header>
+        <h1></h1>
+        <nav>
+            <ul>
+                <li class="menu-nav"><a href="/html-folder/menu.html"><u>Meny</u></a></li>
+                <li><img class="logotype" src="/images/logga-stadens.png"><a href="/html-folder/index.html"></a></li>
+                <li class="about-nav"><a href="/html-folder/about.html">Om oss</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1 class="menu-title">Vår meny</h1>
+
+            <!--Filter--> 
+            <div class="filter-container">
+                <label for="category">Välj kategori:</label>
+                <select id="category">
+                    <option value="all">Alla</option>
+                    <option value="förrätt">Förrätter</option>
+                    <option value="varmrätt">Varmrätter</option>
+                    <option value="efterrätt">Efterrätter</option>
+                </select>
+        
+                <label for="type">Välj typ:</label>
+                <select id="type">
+                    <option value="all">Alla</option>
+                    <option value="vegetariskt">Vegetariskt</option>
+                    <option value="nötkött">Nötkött</option>
+                    <option value="fisk">Fisk</option>
+                </select>
+        
+                <label for="sort">Sortera efter pris:</label>
+                <select id="sort">
+                    <option value="none">Ingen sortering</option>
+                    <option value="low">Lägsta först</option>
+                    <option value="high">Högsta först</option>
+                </select>
+        
+                <button onclick="filterMenu()">Filtrera</button>
+            </div>
+        
+            <!--Meny 
+            <div id="menu" class="menu-container">
+
+                <div class="menu-category" id="förrätter-container">
+                    <h2 class="dishes-title">Förrätter</h2>
+                </div>
+
+                <div class="menu-category" id="varmrätter-container">
+                    <h2 class="dishes-title">Varmrätter</h2>
+                </div>
+
+                <div class="menu-category" id="efterrätter-container">
+                    <h2 class="dishes-title">Efterrätter</h2>
+                </div>
+            </div>
+            <script type="javascript" src="/javascript-folder/script.js" defer></script>-->
+
+    <!-- Områden för de olika kategorierna -->
+    <div class="menu-category" id="förrätter">
+        <h2 class="category-dishes">Förrätter</h2>
+    </div>
+
+    <div class="menu-category" id="varmrätter">
+        <h2 class="category-dishes">Varmrätter</h2>
+    </div>
+
+    <div class="menu-category" id="efterrätter">
+        <h2 class="category-dishes">Efterrätter</h2>
+    </div>
+
+    <!--Script för att hämta och visa menyn-->
+    <script>
+        //Fetch JSON-filen direkt i HTML
+        fetch('/javascript-folder/dishes.json')
+            .then(response => response.json())  //Omvandlar svaret till JSON
+            .then(data => {
+                displayMenu(data);  //Anropar en funktion för att visa menyn
+            })
+            .catch(error => console.error('Fel vid hämtning av JSON:', error));
+
+        function displayMenu(menuItems) {
+            //Hämta de olika kategorierna
+            const förrätterContainer = document.getElementById("förrätter");
+            const varmrätterContainer = document.getElementById("varmrätter");
+            const efterrätterContainer = document.getElementById("efterrätter");
+
+            //Loopa genom alla menyobjekt
+            menuItems.forEach(item => {
+                const menuItem = document.createElement("div");
+                menuItem.classList.add("menu-item");
+                menuItem.innerHTML = `
+                    <h3>${item.name}</h3>
+                    <p><strong>Typ:</strong> ${item.type}</p>
+                    <p><strong>Pris:</strong> ${item.price} kr</p>
+                    <p><strong>Beskrivning:</strong> ${item.description}</p>
+                `;
+                
+                //Beroende på kategori, placera rätten i rätt div
+                if (item.category === "förrätt") {
+                    förrätterContainer.appendChild(menuItem);
+                } else if (item.category === "varmrätt") {
+                    varmrätterContainer.appendChild(menuItem);
+                } else if (item.category === "efterrätt") {
+                    efterrätterContainer.appendChild(menuItem);
+                }
+            });
+        }
+    </script>
+
+        </section>
+    </main>
+    <footer>
+        <div class="footer">
+            <ul class="footer-ul">
+                <li>Hitta oss på:</li>
+                <li><a href="https://www.stadenskaffe.se/" class="fa-solid fa-basket-shopping"></a></li>
+                <li><a href="https://www.facebook.com/StadensKaffe" class="social-login-icon fab fa-facebook"></a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="javascript-folder/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Bruschetta",
+        "description": "Lokalt odlade tomater på en skiva surdegsbröd, toppad med kaffe- och olivolja",
+        "category": "förrätt",
+        "type": "vegetariskt",
+        "allergener": "ägg, mjöl",
+        "price": 115
+    },
+    {
+        "name": "Grillad sparris",
+        "description": "Säsongens sparris, grillad till perfektion och toppad med parmesan och kaffe- och olivolja",
+        "category": "förrätt",
+        "type": "vegetarisk",
+        "allergener": "mjölk, laktos",
+        "price": 95
+    },
+    {
+        "name": "Löksoppa",
+        "description": "Gräddig soppa på all slags lök, toppad med rostad lök och en kaffe- olivolja",
+        "category": "förrätt",
+        "type": "vegetarisk",
+        "allergener": "mjölk, laktos",
+        "price": 95
+    },
+    {
+        "name": "Grillad Entrecôte",
+        "description": "Grillad som kocken vill ha den, serveras med pommes, riven parmesan och en rövinssås med inslag av kaffe",
+        "category": "varmrätt",
+        "type": "nötkött",
+        "allergener": "mjölk, laktos",
+        "price": 250
+    },
+    {
+        "name": "Kolja",
+        "description": "Grillad kolja, serveras med säsongens primörer och en otrolig pepparrot- och kaffesås",
+        "category": "varmrätt",
+        "type": "fisk",
+        "allergener": "mjölk, laktos",
+        "price": 220
+    },
+    {
+        "name": "Vegetarisk Pasta",
+        "description": "Penne badande i en gräddsås berikad med säsongens grönsaker och kaffe",
+        "category": "varmrätt",
+        "type": "vegetariskt",
+        "allergener": "ägg, mjölk, laktos",
+        "price": 180
+    },
+    {
+        "name": "Tiramisu",
+        "description": "En klassiska tiramisu",
+        "category": "efterrätt",
+        "type": "vegetariskt",
+        "allergener": "ägg, mjölk, laktos",
+        "price": 95
+    },
+    {
+        "name": "Creme Brule",
+        "description": "Creme brule a la stadens, en krämig dessert med inslag av vanilj och kaffe",
+        "category": "efterrätt",
+        "type": "vegetariskt",
+        "allergener": "ägg, mjölk, laktos",
+        "price": 95
+    },
+    {
+        "name": "3 Praliner",
+        "description": "Tre olika praliner, fråga om du är nyfiken på dagens smakkonstallationer",
+        "category": "efterrätt",
+        "type": "vegetariskt",
+        "allergener": "mjölk, laktos",
+        "price": 75
+    }
+]

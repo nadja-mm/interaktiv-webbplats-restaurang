@@ -1,0 +1,257 @@
+/*Hela sidan*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.rubik-mono-one-regular {
+    font-family: "Rubik Mono One", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*Body*/
+body{
+    background-color: rgb(63, 17, 17);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*Navigeringsmeny*/
+header{
+    background-color: rgb(63, 17, 17);
+    padding: 10px;
+}
+
+.logotype{
+    display: flex;
+    max-width: 200px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.menu-nav, .about-nav{
+    margin: 50px;
+}
+
+a, .menu-nav .about-nav{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+li:hover{
+    text-decoration: underline;
+}
+
+h1{
+    text-align: center;
+    font-family: "Rubik Mono One", monospace;
+    color: #fff;
+}
+
+/*Main*/
+
+h2{
+    text-align: center;
+    font-family: "Rubik Mono One", monospace;
+    color: #fff;
+}
+
+.info-cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px 50px 100px 50px;
+    margin: 30px;
+}
+
+.card{
+    flex: 1;
+
+}
+
+.image{
+    max-width: 300px;
+    border-radius: 50%;
+    position: relative;
+}
+
+/*Hover effekt för main cards*/
+/*.card {
+    position: relative;
+    height: 200px;
+    width: 200px;
+}
+
+.card-discription {
+    position: absolute;
+    top: 0;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    padding: 100px;
+    background: rgba(123, 127, 130, 0.72);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 50%; 
+
+.card:hover .card-discription {
+    visibility: visible;
+    opacity: 1;
+}*/
+
+.info-cards{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    width: 500px;
+    position: relative;
+}
+
+.image{
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.card-discription{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(0,0,0,0,6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.card-discription:hover{
+    opacity: 1;
+}
+
+.card-discription h3{
+    font-size: 35px;
+    color: #f6ff00;
+    margin-bottom: 15px;
+    font-family: "Rubik Mono One", monospace;
+}
+
+.card-discription p{
+    font-size: 15px;
+    color: #fff;
+}
+
+.card-discription > *{
+    transform: translateY(25px);
+    transition: transform 0.6s;
+}
+
+.philosophy{
+    margin: 50px 150px 50px 150px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size-adjust: 0.6;
+    color: #fff;
+}
+
+h4{
+    font-size-adjust: 1.2;
+}
+
+/*Footer*/
+footer{
+    display: flex;
+    /*flex-direction: row;*/
+    background-color: rgb(30, 29, 29);
+    color: white;
+    padding: 10px;
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer-ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    list-style: none;
+    align-items: center;
+    text-align: center;
+}
+
+a, .social-login-icon .webbshop{
+    display: flex;
+    padding: 20px 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.footer{
+    text-align: center;
+    margin: auto 0;
+}
+
+/*subpages*/
+
+.menu-title{
+    margin: 10px;
+}
+
+.filter-container{
+    margin: 30px;
+    color:#fff;
+}
+
+
+.menu-container{
+    display: flex;
+    margin: 30px 60px 30px 60px;
+    background-color: antiquewhite;
+}
+
+.menu-container:after{
+    content:"";
+    display: table;
+    clear: both;
+}
+
+.menu-category{
+    float: left;
+    width: 33.33%;
+    background-color: antiquewhite;
+    
+}
+
+.menu-item{
+    margin: 30px;
+    background-color: antiquewhite;
+}
+
+.category-dishes{
+    color: black;
+}
+
+/*media quaries*/
+@media screen and (max-width: 600px){
+    .column {
+    width: 100%;
+    }
+}

@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     border: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .rubik-mono-one-regular {
@@ -80,35 +81,13 @@ h2{
 }
 
 .image{
+    margin: auto;
     max-width: 300px;
+    width: 100%;
     border-radius: 50%;
     position: relative;
+    display: block;
 }
-
-/*Hover effekt för main cards*/
-/*.card {
-    position: relative;
-    height: 200px;
-    width: 200px;
-}
-
-.card-discription {
-    position: absolute;
-    top: 0;
-    bottom: -100px;
-    left: 0;
-    right: 0;
-    padding: 100px;
-    background: rgba(123, 127, 130, 0.72);
-    color: #fff;
-    visibility: hidden;
-    opacity: 0;
-    border-radius: 50%; 
-
-.card:hover .card-discription {
-    visibility: visible;
-    opacity: 1;
-}*/
 
 .info-cards{
     width: 100%;
@@ -123,11 +102,6 @@ h2{
     position: relative;
 }
 
-.image{
-    width: 100%;
-    display: block;
-    margin: auto;
-}
 
 .card-discription{
     width: 100%;
@@ -142,6 +116,8 @@ h2{
     flex-direction: column;
     opacity: 0;
     transition: 0.6s;
+    font-size: 15px;
+    color: #fff;
 }
 
 .card-discription:hover{
@@ -155,10 +131,6 @@ h2{
     font-family: "Rubik Mono One", monospace;
 }
 
-.card-discription p{
-    font-size: 15px;
-    color: #fff;
-}
 
 .card-discription > *{
     transform: translateY(25px);
@@ -166,11 +138,14 @@ h2{
 }
 
 .philosophy{
-    margin: 50px 150px 50px 150px;
     text-align: center;
+    border-style: double;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size-adjust: 0.6;
-    color: #fff;
+    border-width: 5px;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 0 70px;
+    background-color: antiquewhite;
 }
 
 h4{
@@ -215,41 +190,118 @@ a, .social-login-icon .webbshop{
     margin: 10px;
 }
 
-.filter-container{
-    margin: 30px;
-    color:#fff;
-}
-
-
-.menu-container{
-    display: flex;
-    margin: 30px 60px 30px 60px;
+.adress-container{
+    margin: 10% 37%;
+    text-align: center;
+    border-style: double;
+    border-width: 5px;
+    border-radius: 10px;
+    padding: 25px;
     background-color: antiquewhite;
 }
 
-.menu-container:after{
-    content:"";
-    display: table;
-    clear: both;
+.adress-title{
+    color: black;
 }
 
-.menu-category{
-    float: left;
-    width: 33.33%;
-    background-color: antiquewhite;
-    
+/*meny sida*/
+
+/*container med tre kolumner*/
+#menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
 }
 
-.menu-item{
-    margin: 30px;
-    background-color: antiquewhite;
+
+.category-column h2 {
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
-.category-dishes{
+.dish {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.category-column {
+    background-color: #f8f8f8;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    justify-content: center;
+}
+
+.category-column h2 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: black;
+}
+
+/*lunchbuffen*/
+#lunchbuffe-section {
+    margin: 3rem auto;
+    text-align: center;
+}
+
+#lunch-info {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin-inline: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#toggle-lunch {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#toggle-lunch:hover {
+    background-color: #555;
+}
+
+.lunchbuffe{
+    list-style: none;
+}
+
+.lunchbuffe li{
+    text-decoration: none;
+}
+
+.lunch-rubrik{
     color: black;
 }
 
 /*media quaries*/
+
+/* 2 kolumner på platta*/
+@media (max-width: 1000px) {
+    #menu {
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+  /* 1 kolumn på mobil */
+@media (max-width: 600px) {
+    #menu {
+    grid-template-columns: 1fr;
+    }
+}
+
 @media screen and (max-width: 600px){
     .column {
     width: 100%;

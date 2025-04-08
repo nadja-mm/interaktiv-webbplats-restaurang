@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="/css-folder/style.css">
-    <script type="javascript" src="/javascript-folder/script.js" defer></script>
     <title>Stadens resturang</title>
 </head>
 <body>
     <header>
-        <h1></h1>
+        <h1>Stadens Restaurang</h1>
         <nav>
             <ul>
                 <li class="menu-nav"><a href="/html-folder/menu.html"><u>Meny</u></a></li>
@@ -23,106 +23,70 @@
     </header>
 
     <main>
+        <section id="lunchbuffe-section">
+            <button id="toggle-lunch">Visa lunchbuffé</button>
+        
+            <div id="lunch-info" style="display: none;">
+            <h2 class="lunch-rubrik">Lunchbuffé</h2>
+            <p>
+                Välkommen till vår kaffeinspirerade lunchbuffé som serveras måndag till fredag kl. <strong>11:00–14:30</strong>.
+            </p>
+            <ul class="lunchbuffe">
+                <li>Dagens varmrätt (vegetariskt och köttalternativ)</li>
+                <li>Fräscha sallader & hembakat bröd</li>
+                <li>Kaka till kaffet</li>
+                <li>Kaffe/te samt dricka till maten ingår</li>
+            </ul>
+            <p><strong>Pris:</strong> 150 kr (inkl. dryck)</p>
+            </div>
+        </section>
+
         <section>
             <h1 class="menu-title">Vår meny</h1>
+            <!--Kategorifilter-->
+            <select id="filter-category">
+                <option value="alla">Alla kategorier</option>
+                <option value="förrätt">Förrätter</option>
+                <option value="varmrätt">Varmrätter</option>
+                <option value="efterrätt">Efterrätter</option>
+            </select>
+            
+            <!--Vegetariskt-->
+            <label>
+                <input type="checkbox" id="filter-vegetarian"> Visa endast vegetariska rätter
+            </label>
+            
+            <!--Fiskrätter -->
+            <label>
+                <input type="checkbox" id="filter-fish"> Visa endast fiskrätter
+            </label>
+            
+            <!--Glutenfritt-->
+            <label>
+                <input type="checkbox" id="filter-gluten-free"> Visa endast glutenfria rätter
+            </label>
+            
+            <!--Prissortering-->
+            <select id="sort-price">
+                <option value="none">Sortera efter pris</option>
+                <option value="low-to-high">Lägsta pris först</option>
+                <option value="high-to-low">Högsta pris först</option>
+            </select>
 
-            <!--Filter--> 
-            <div class="filter-container">
-                <label for="category">Välj kategori:</label>
-                <select id="category">
-                    <option value="all">Alla</option>
-                    <option value="förrätt">Förrätter</option>
-                    <option value="varmrätt">Varmrätter</option>
-                    <option value="efterrätt">Efterrätter</option>
-                </select>
-        
-                <label for="type">Välj typ:</label>
-                <select id="type">
-                    <option value="all">Alla</option>
-                    <option value="vegetariskt">Vegetariskt</option>
-                    <option value="nötkött">Nötkött</option>
-                    <option value="fisk">Fisk</option>
-                </select>
-        
-                <label for="sort">Sortera efter pris:</label>
-                <select id="sort">
-                    <option value="none">Ingen sortering</option>
-                    <option value="low">Lägsta först</option>
-                    <option value="high">Högsta först</option>
-                </select>
-        
-                <button onclick="filterMenu()">Filtrera</button>
+            <div id="menu">
+                <div class="category-column" id="förrätt-column">
+                <h2>Förrätter</h2>
+                <div class="dish-list" id="förrätt-list"></div>
+                </div>
+                <div class="category-column" id="varmrätt-column">
+                <h2>Varmrätter</h2>
+                <div class="dish-list" id="varmrätt-list"></div>
+                </div>
+                <div class="category-column" id="efterrätt-column">
+                <h2>Efterrätter</h2>
+                <div class="dish-list" id="efterrätt-list"></div>
+                </div>
             </div>
-        
-            <!--Meny 
-            <div id="menu" class="menu-container">
-
-                <div class="menu-category" id="förrätter-container">
-                    <h2 class="dishes-title">Förrätter</h2>
-                </div>
-
-                <div class="menu-category" id="varmrätter-container">
-                    <h2 class="dishes-title">Varmrätter</h2>
-                </div>
-
-                <div class="menu-category" id="efterrätter-container">
-                    <h2 class="dishes-title">Efterrätter</h2>
-                </div>
-            </div>
-            <script type="javascript" src="/javascript-folder/script.js" defer></script>-->
-
-    <!-- Områden för de olika kategorierna -->
-    <div class="menu-category" id="förrätter">
-        <h2 class="category-dishes">Förrätter</h2>
-    </div>
-
-    <div class="menu-category" id="varmrätter">
-        <h2 class="category-dishes">Varmrätter</h2>
-    </div>
-
-    <div class="menu-category" id="efterrätter">
-        <h2 class="category-dishes">Efterrätter</h2>
-    </div>
-
-    <!--Script för att hämta och visa menyn-->
-    <script>
-        //Fetch JSON-filen direkt i HTML
-        fetch('/javascript-folder/dishes.json')
-            .then(response => response.json())  //Omvandlar svaret till JSON
-            .then(data => {
-                displayMenu(data);  //Anropar en funktion för att visa menyn
-            })
-            .catch(error => console.error('Fel vid hämtning av JSON:', error));
-
-        function displayMenu(menuItems) {
-            //Hämta de olika kategorierna
-            const förrätterContainer = document.getElementById("förrätter");
-            const varmrätterContainer = document.getElementById("varmrätter");
-            const efterrätterContainer = document.getElementById("efterrätter");
-
-            //Loopa genom alla menyobjekt
-            menuItems.forEach(item => {
-                const menuItem = document.createElement("div");
-                menuItem.classList.add("menu-item");
-                menuItem.innerHTML = `
-                    <h3>${item.name}</h3>
-                    <p><strong>Typ:</strong> ${item.type}</p>
-                    <p><strong>Pris:</strong> ${item.price} kr</p>
-                    <p><strong>Beskrivning:</strong> ${item.description}</p>
-                `;
-                
-                //Beroende på kategori, placera rätten i rätt div
-                if (item.category === "förrätt") {
-                    förrätterContainer.appendChild(menuItem);
-                } else if (item.category === "varmrätt") {
-                    varmrätterContainer.appendChild(menuItem);
-                } else if (item.category === "efterrätt") {
-                    efterrätterContainer.appendChild(menuItem);
-                }
-            });
-        }
-    </script>
-
         </section>
     </main>
     <footer>
@@ -134,7 +98,6 @@
             </ul>
         </div>
     </footer>
-    <script src="javascript-folder/script.js"></script>
-
+    <script src="javascript-folder/script.js?v=1.0" defer></script>
 </body>
 </html>

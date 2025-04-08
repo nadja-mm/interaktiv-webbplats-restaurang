@@ -1,0 +1,85 @@
+[
+    {
+        "name": "Grillad sparris",
+        "price": 105,
+        "category": "förrätt",
+        "description": "Hårt grillad sparris toppad med en ansjovis och kaffe-olivolja.",
+        "vegetarian": false,
+        "type": "fisk",
+        "glutenFree": false
+        },
+        {
+            "name": "Löksoppa",
+            "price": 95,
+            "category": "förrätt",
+            "description": "Klassisk fransk förrätt men på vårt kaffe-vis.",
+            "vegetarian": true,
+            "type": "vegetarisk",
+            "glutenFree": true
+            },
+    {
+    "name": "Grillad lax",
+    "price": 200,
+    "category": "varmrätt",
+    "description": "Laxfilé serverad med citron, potatis och kaffemajonnäs.",
+    "vegetarian": false,
+    "type": "fisk",
+    "glutenFree": true
+    },
+    {
+    "name": "Svamppasta",
+    "price": 185,
+    "category": "varmrätt",
+    "description": "Krämig svamppasta med tydlig kaffesmak.",
+    "vegetarian": true,
+    "type": "vegetarisk",
+    "glutenFree": false
+    },
+    
+    {
+    "name": "Kolja med potatispuré",
+    "price": 200,
+    "category": "varmrätt",
+    "description": "Grillad kolja, serveras med säsongens primörer och en otrolig pepparrot- och kaffesås.",
+    "vegetarian": false,
+    "type": "fisk",
+    "glutenFree": false
+    },
+    {
+    "name": "Linsgryta",
+    "price": 190,
+    "category": "varmrätt",
+    "description": "Mustig vegetarisk linsgryta med kokosmjölk och kaffe.",
+    "vegetarian": true,
+    "type": "vegetarisk",
+    "glutenFree": true
+    },
+    
+    {
+    "name": "Glutenfri pizza med biff",
+    "price": 185,
+    "category": "varmrätt",
+    "description": "Pizza gräddad i vår vedugn med massa kött, ost och kaffe.",
+    "vegetarian": false,
+    "type": "nötkött",
+    "glutenFree": true
+    },
+    {
+        "name": "Chokladfondant",
+        "price": 85,
+        "category": "efterrätt",
+        "description": "Varm chokladkaka med tydlig sälta och rund kaffesmak.",
+        "vegetarian": true,
+        "type": "vegetarisk",
+        "glutenFree": false
+        },
+        {
+            "name": "Creme brûlée",
+            "price": 85,
+            "category": "efterrätt",
+            "description": "Klassisk eferrätt på vårt kaffe-vis.",
+            "vegetarian": true,
+            "type": "vegetarisk",
+            "glutenFree": true
+            }
+]
